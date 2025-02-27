@@ -36,7 +36,16 @@ def login_with_selenium():
     
     print("login clicked. Program waiting for 3 sec.")
     time.sleep(3)  # Wait for login to process
+    
+    #Url after login
     print(f"After 3 sec.\nCurrent Url:{driver.current_url}")
+    
+    # Save screenshotafter login
+    driver.save_screenshot("after_login.png")
+    
+    # Save Webpage after login
+    with open("after_login.html", "w", encoding="utf-8") as f:
+        f.write(driver.page_source)
     
     if "dashboard" in driver.current_url:
         print("Login successful!")

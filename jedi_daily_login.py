@@ -7,7 +7,7 @@ import time
 def login_with_selenium():
     options = Options()
     options.add_argument("start-maximized")
-    #options.add_argument("--headless=new")  # Runs without a visible browser window
+    options.add_argument("--headless=new")  # Runs without a visible browser window
     
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)

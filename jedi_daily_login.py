@@ -23,12 +23,6 @@ def login_with_selenium():
     
     username_input.send_keys(username)
     password_input.send_keys(password)
-    # Get credentials from environment variables
-    username = os.getenv("MYUSERNAME")
-    password = os.getenv("MYPASSWORD")
-    
-    username_input.send_keys(username)
-    password_input.send_keys(password)
     
     print("Credentials sent successfully")
     

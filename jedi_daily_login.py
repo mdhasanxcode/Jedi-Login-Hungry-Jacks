@@ -19,6 +19,8 @@ def login_with_selenium():
     username = os.getenv("MYUSERNAME")
     password = os.getenv("MYPASSWORD")
     
+    print("Credentials from the environment achived")
+    
     username_input.send_keys(username)
     password_input.send_keys(password)
     # Get credentials from environment variables
@@ -28,10 +30,14 @@ def login_with_selenium():
     username_input.send_keys(username)
     password_input.send_keys(password)
     
+    print("Credentials sent successfully")
+    
     login_button = driver.find_element("id", "login")
     login_button.click()
     
+    print("login clicked. Program waiting for 3 sec.")
     time.sleep(3)  # Wait for login to process
+    print(f"After 3 sec.\nCurrent Url:{driver.current_url}")
     
     if "dashboard" in driver.current_url:
         print("Login successful!")

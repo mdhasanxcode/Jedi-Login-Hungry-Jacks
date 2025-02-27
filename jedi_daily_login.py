@@ -1,3 +1,4 @@
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
@@ -14,8 +15,12 @@ def login_with_selenium():
     username_input = driver.find_element("id", "username")
     password_input = driver.find_element("id", "password")
     
-    username_input.send_keys("")
-    password_input.send_keys("")
+    # Get credentials from environment variables
+    username = os.getenv("MYUSERNAME")
+    password = os.getenv("MYPASSWORD")
+    
+    username_input.send_keys(username)
+    password_input.send_keys(password)
     
     login_button = driver.find_element("id", "login")
     login_button.click()

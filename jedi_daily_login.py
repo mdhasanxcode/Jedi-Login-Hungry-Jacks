@@ -16,8 +16,8 @@ def login_with_selenium():
     password_input = driver.find_element("id", "password")
     
     # Get credentials from environment variables
-    username = "MdRakibHasan"
-    password = "123456"
+    username = os.getenv("MYUSERNAME")
+    password = os.getenv("MYPASSWORD")
     
     username_input.send_keys(username)
     password_input.send_keys(password)

@@ -24,6 +24,11 @@ def login_with_selenium():
     username_input.send_keys(username)
     password_input.send_keys(password)
     
+    if username and password:
+        print("Credentials found.")
+    else:
+        print("Missing credentials!")
+    
     print("Credentials sent successfully")
     
     login_button = driver.find_element("id", "login")
